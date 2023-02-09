@@ -1,5 +1,5 @@
 {
-  "name": "jeremy-h-sdk",
+  "name": "jeremyh-sdk",
   "version": "0.1.0",
   "description": "An SDK implementation for The One API",
   "main": "src/index.ts",
