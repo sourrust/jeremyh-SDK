@@ -1,12 +1,13 @@
 import fetch from 'node-fetch';
 
-import Movie         from './types/Movie';
-import MovieQuote    from './types/MovieQuote';
-import NotFoundError from './types/NotFoundError';
-import Options       from './types/MovieOptions';
-import Pagination    from './types/Pagination';
-import getUrlParams  from './utility/getUrlParams';
-import isNil         from './utility/isNil';
+import Movie             from './types/Movie';
+import MovieQuote        from './types/MovieQuote';
+import NotFoundError     from './types/NotFoundError';
+import Options           from './types/MovieOptions';
+import Pagination        from './types/Pagination';
+import UnauthorizedError from './types/UnauthorizedError';
+import getUrlParams      from './utility/getUrlParams';
+import isNil             from './utility/isNil';
 
 class TheOneSDK {
     private baseUrl = 'https://the-one-api.dev/v2';
@@ -26,6 +27,15 @@ class TheOneSDK {
             method: 'get',
             headers: { Authorization: `Bearer ${this.apiKey}` },
         });
+
+        if (!response.ok) {
+            switch (response.status) {
+                case 401:
+                    throw new UnauthorizedError();
+                default:
+                    throw new Error(`An unexpected response occurred ${response.status}`);
+            }
+        }
 
         return response.json();
     }
