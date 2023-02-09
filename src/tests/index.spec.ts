@@ -2,6 +2,7 @@ import fetchMock from 'node-fetch';
 import TheOneSDK from '~/index';
 
 jest.mock('node-fetch', () => jest.fn(() => Promise.resolve({
+    ok: true,
     json: () => Promise.resolve({ docs: [{}] }),
 })));
 

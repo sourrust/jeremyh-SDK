@@ -21,3 +21,13 @@ const sdk = new TheOneSDK('your-api-key');
 
 const movies = await sdk.getMovies();
 ```
+
+### Testing
+
+```bash
+npm test
+
+# or
+
+yarn test
+```
