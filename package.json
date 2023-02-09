@@ -1,5 +1,5 @@
 {
-  "name": "jeremyh-sdk",
+  "name": "@sourrust/the-one-sdk",
   "version": "0.1.0",
   "description": "An SDK implementation for The One API",
   "main": "src/index.ts",
@@ -32,5 +32,16 @@
   },
   "dependencies": {
     "node-fetch": "^2.6.6"
-  }
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sourrust/jeremyh-SDK.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sourrust/jeremyh-SDK/issues"
+  },
+  "homepage": "https://github.com/sourrust/jeremyh-SDK#readme"
 }
